@@ -1,0 +1,669 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Siamak Solat</title>
+    <meta content="text/HTML; charset=utf-8" http-equiv="content-type" />
+    <meta content="" http-equiv="content-language" />
+    <meta content="Distributed Databases, NoSQL, Fault-Tolerance, Cybersecurity, Machine Learning" name="Keywords" />
+    <meta content="Siamak Solat" name="Author" />
+    <meta content="Personal page of Siamak Solat" name="Description" />
+    <style media="screen" type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            color: black;
+            background: #e6f0fa;
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .corps {
+            width: 800px;
+            min-height: 550px;
+            margin: 20px auto;
+            padding: 15px 50px;
+            border: 1px solid #356AA0;
+            color: black;
+            background: #f2f3f4;
+            text-align: left;
+        }
+
+        .header-container .header-link {
+            color: red;
+        }
+
+        .corps h1 {
+            font-size: 140%;
+            font-family: "Times New Roman", Times, serif;
+            color: #2D4D4D;
+            background: #f2f3f4;
+            display: inline;
+        }
+
+        .corps h2 {
+            font-size: 115%;
+            font-family: "Times New Roman", Times, serif;
+            color: #2D5D5D;
+            background: #f2f3f4;
+        }
+
+        .corps h3,
+        .corps h4 {
+            font-size: 100%;
+            font-family: "Times New Roman", Times, serif;
+            color: #2D6D6D;
+            background: #f2f3f4;
+        }
+
+        .corps p {
+            text-align: justify;
+        }
+
+        .corps ul {
+            list-style-type: square;
+        }
+
+        .corps li {
+            padding: 0 2px;
+        }
+
+        .corps b {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .corps a {
+            text-decoration: none;
+            font-family: "Times New Roman", Times, serif;
+            color: #a0d3f3;
+            background: transparent;
+        }
+
+        .tabs a {
+            text-decoration: none;
+        }
+
+        .corps a:hover {
+            text-decoration: underline;
+        }
+
+        .tabs {
+            margin: 0 0px;
+            padding: 0 10px;
+            border-bottom: 1px solid #356AA0;
+            margin-left: 0cm;
+        }
+
+        .tabs a {
+            margin-right: 10px;
+            padding: 0 10px;
+            border: 1px solid #356AA0;
+            color: #1D2D8D;
+            background: #F5F5F5;
+        }
+
+        .tabs a.selected {
+            border-bottom: none;
+            color: white;
+            background: #1d303b;
+        }
+
+        .menu-content {
+            display: none;
+            background-color: #356AA0;
+            color: white;
+            padding: 15px;
+        }
+
+        .menu-content h1,
+        .menu-content h2,
+        .menu-content h3,
+        .menu-content h4 {
+            color: inherit;
+            background: inherit;
+        }
+
+        .pied {
+            margin: 0 -50px;
+            padding: 15px 50px;
+            border-top: 1px solid #356AA0;
+        }
+
+        hr {
+            clear: both;
+        }
+
+        q {
+            quotes: '\0000ab\0000a0' '\0000a0\0000bb' '\00201c\0000a0' '\0000a0\00201d';
+        }
+
+        .header-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .header-container h1,
+        .header-container p {
+            text-align: left;
+            margin-left: 0;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .logo {
+            height: auto;
+        }
+
+        .Inria_logo {
+            width: 85px;
+        }
+
+        .su_logo_transparent {
+            width: 85px;
+        }
+
+        .logo:not(:first-of-type) {
+            margin-left: 6mm;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        .language-selector {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .language-selector a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #1D2D8D;
+        }
+
+        .language-selector a.selected {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .tabs a .lang-content {
+            display: none;
+        }
+
+        .tabs a .lang-content.active {
+            display: inline;
+        }
+
+        body[data-lang="fr"] .tabs .en-only-tab {
+            display: none;
+        }
+
+        #menu2 .lang-en ol li {
+            margin-bottom: 0.5em;
+        }
+
+        #menu3 .lang-en ul li+li {
+            margin-top: 0.4em;
+        }
+
+        .header-container .lang-content h1 {
+            margin-bottom: 10px;
+        }
+
+        .header-container .lang-content h1 {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #menu4 .cert-heading {
+            margin-bottom: 0.7em;
+        }
+
+        #menu4 .cert-list {
+            margin-left: 1.5em;
+        }
+
+        #menu4 .cert-list>li {
+            margin-bottom: 0.9em;
+        }
+
+        #menu4 .cert-sublist {
+            list-style-type: circle;
+            margin-top: 0.3em;
+            margin-bottom: 0;
+            padding-left: 1.2em;
+        }
+
+        #menu4 .cert-sublist li {
+            margin: 0.15em 0;
+        }
+
+        #menu5 .repo-list {
+            list-style-type: disc;
+            margin-left: 1.5em;
+        }
+
+        #menu5 .repo-list>li {
+            margin-bottom: 0.8em;
+        }
+
+        #menu5 .repo-sublist {
+            list-style-type: circle;
+            margin-top: 0.25em;
+            padding-left: 1.2em;
+        }
+
+        #menu5 .repo-sublist li {
+            margin: 0.15em 0;
+        }
+    </style>
+    <script type="text/javascript">
+        function switchLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            history.replaceState(null, "", url);
+            updateLanguageContent();
+        }
+
+        function updateLanguageContent() {
+            const lang = localStorage.getItem('selectedLanguage') || 'en';
+
+            document.body.setAttribute('data-lang', lang);
+
+            const allContent = document.querySelectorAll('.lang-content');
+            allContent.forEach(element => {
+                element.classList.remove('active');
+            });
+
+            const selectedContent = document.querySelectorAll('.lang-' + lang);
+            selectedContent.forEach(element => {
+                element.classList.add('active');
+            });
+
+            const langSelectors = document.querySelectorAll('.language-selector a');
+            langSelectors.forEach(element => {
+                element.classList.remove('selected');
+                if (element.getAttribute('data-lang') === lang) {
+                    element.classList.add('selected');
+                }
+            });
+
+            const tabContents = document.querySelectorAll('.tabs .lang-content');
+            tabContents.forEach(element => {
+                element.classList.remove('active');
+            });
+
+            const selectedTabContents = document.querySelectorAll('.tabs .lang-' + lang);
+            selectedTabContents.forEach(element => {
+                element.classList.add('active');
+            });
+        }
+
+        function showContent(menu) {
+            var contents = document.getElementsByClassName("menu-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+                contents[i].style.backgroundColor = "";
+                contents[i].style.color = "";
+            }
+
+            var tabs = document.getElementsByClassName("tabs")[0].getElementsByTagName("a");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("selected");
+            }
+
+            document.getElementById(menu).style.display = "block";
+            document.getElementById(menu).style.backgroundColor = "#1d303b";
+            document.getElementById(menu).style.color = "white";
+
+            var selectedTab = Array.from(tabs).find(tab => tab.onclick.toString().includes(menu));
+            if (selectedTab) {
+                selectedTab.classList.add("selected");
+            }
+
+            const lang = localStorage.getItem('selectedLanguage') || 'en';
+            const url = new URL(window.location);
+            url.hash = menu;
+            url.searchParams.set('lang', lang);
+            history.replaceState(null, "", url);
+
+            updateLanguageContent();
+        }
+
+        window.onload = function () {
+            const lang = 'en';
+            localStorage.setItem('selectedLanguage', lang);
+
+            const hash = window.location.hash.replace("#", "");
+            const defaultMenu = hash || "menu1";
+            showContent(defaultMenu);
+
+            updateLanguageContent();
+        };
+    </script>
+</head>
+
+<body>
+    <div class="corps">
+        <div class="language-selector">
+            <a href="javascript:void(0);" onclick="switchLanguage('en');" data-lang="en">English</a> |
+            <a href="javascript:void(0);" onclick="switchLanguage('fr');" data-lang="fr">Français</a>
+        </div>
+
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="Inria_logo_transparent_2.png" alt="Inria_logo" class="logo Inria_logo">
+                <img src="su_logo_2_transparent.png" alt="sb" class="logo su_logo_transparent">
+            </div>
+            <div class="lang-content lang-en">
+                <h1>Siamak Solat</h1>
+                <p>PhD in Computer Science</p>
+                <p>Affiliated with <a href="https://inria.fr/en" target="_blank" class="header-link">Inria</a> and <a
+                        href="https://www.sorbonne-universite.fr/en" target="_blank" class="header-link">Sorbonne
+                        University</a></p>
+                <p>Email: siamak.solat @ inria.fr</p>
+                <p>Address: 48 Rue Barrault, 75013 Paris</p>
+            </div>
+            <div class="lang-content lang-fr">
+                <h1>Siamak Solat</h1>
+                <p>Docteur en informatique</p>
+                <p>Affilié à <a href="https://www.inria.fr/fr" target="_blank" class="header-link">Inria</a> et à <a
+                        href="https://www.sorbonne-universite.fr/" target="_blank" class="header-link">Sorbonne
+                        University</a></p>
+                <p>E-mail : siamak.solat @ inria.fr</p>
+                <p>Adresse: 48 Rue Barrault, 75013 Paris</p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <a class="selected" href="javascript:void(0);" onclick="showContent('menu1');">
+                <span class="lang-content lang-en">Home</span>
+                <span class="lang-content lang-fr">Accueil</span>
+            </a>
+
+            <a href="javascript:void(0);" onclick="showContent('menu2');" class="en-only-tab">
+                <span class="lang-content lang-en">Publications</span>
+                <span class="lang-content lang-fr">Publications</span>
+            </a>
+            <a href="javascript:void(0);" onclick="showContent('menu3');" class="en-only-tab">
+                <span class="lang-content lang-en">Projects</span>
+                <span class="lang-content lang-fr">Projets</span>
+            </a>
+            <a href="javascript:void(0);" onclick="showContent('menu4');" class="en-only-tab">
+                <span class="lang-content lang-en">Certificates</span>
+                <span class="lang-content lang-fr">Certificats</span>
+            </a>
+            <a href="javascript:void(0);" onclick="showContent('menu5');" class="en-only-tab">
+                <span class="lang-content lang-en">Repositories</span>
+                <span class="lang-content lang-fr">Dépôts</span>
+            </a>
+        </div>
+
+        <!-- Content for Menu 1 -->
+        <div id="menu1" class="menu-content">
+            <div class="lang-content lang-en">
+                <p>
+                    I am currently working at <a href="https://www.inria.fr/en/inria-paris-centre" target="_blank">Inria
+                        Paris</a>, within the <a href="https://team.inria.fr/mimove/" target="_blank">MiMove</a> team.
+                </p>
+                <p>
+                    My current research focuses on robust, large-scale machine learning under resource volatility. This
+                    work is part of the <a href="https://www.inria.fr/en/cupseli" target="_blank">Cupseli</a> project, a
+                    joint research initiative between Inria and <a href="https://www.hivenet.com/"
+                        target="_blank">Hivenet</a>.
+                </p>
+                <p>
+                    I am supervised by <a href="https://team.inria.fr/mimove/team/nikolaos-georgantas/"
+                        target="_blank">Nikolaos Georgantas</a> (MiMove team, Inria Paris) and <a
+                        href="https://people.irisa.fr/Davide.Frey/" target="_blank">Davide Frey</a> (<a
+                        href="https://team.inria.fr/wide/" target="_blank">WIDE</a> team, <a
+                        href="https://www.inria.fr/en/inria-centre-rennes-university" target="_blank">Inria Rennes</a>).
+                </p>
+                <p>
+                    My research interests span machine learning, large-scale P2P networks, and robust, high-performance
+                    distributed systems.
+                </p>
+            </div>
+            <div class="lang-content lang-fr">
+                <p>
+                    Je travaille actuellement à <a href="https://www.inria.fr/fr/centre-inria-de-paris"
+                        target="_blank">Inria Paris</a> au sein de l’équipe </a>, within the <a
+                        href="https://team.inria.fr/mimove/" target="_blank">MiMove</a>.
+                </p>
+                <p>
+                    Mes travaux de recherche actuels portent sur l’apprentissage automatique robuste et à grande échelle
+                    dans un contexte de volatilité des ressources. Ces travaux s’inscrivent dans le cadre du projet <a
+                        href="https://www.inria.fr/fr/cupseli" target="_blank">Cupseli</a>, une initiative de recherche
+                    conjointe entre Inria et <a href="https://www.hivenet.com/" target="_blank">Hivenet</a>.
+                </p>
+                <p>
+                    Je suis encadré par <a href="https://team.inria.fr/mimove/team/nikolaos-georgantas/"
+                        target="_blank">Nikolaos Georgantas</a> (équipe MiMove, Inria Paris) et <a
+                        href="https://people.irisa.fr/Davide.Frey/" target="_blank">Davide Frey</a> (équipe <a
+                        href="https://team.inria.fr/wide/" target="_blank">WIDE</a>, <a
+                        href="https://www.inria.fr/en/inria-centre-rennes-university" target="_blank">Inria Rennes</a>).
+                </p>
+                <p>
+                    Mes centres d’intérêt de recherche couvrent l’apprentissage automatique, les réseaux pair-à-pair
+                    (P2P) à grande échelle, ainsi que les systèmes distribués robustes et haute performance.
+                </p>
+            </div>
+        </div>
+
+        <!-- Content for Menu 2 --> 
+        <div id="menu2" class="menu-content">
+            <div class="lang-content lang-en">
+                <h2>Selected Publications</h2>
+                <ol>
+                    <li>
+                        S. Solat. <a href="https://link.springer.com/article/10.1007/s10586-024-05081-3" target="_blank">"Parallel Committees: a scalable, secure, and fault-tolerant distributed NoSQL database architecture."</a>
+                        Cluster Computing, Volume 28, Article 254, 25 February 2025.
+                    </li>
+                    <li>
+                        S. Solat. <a href="https://dl.acm.org/doi/10.1145/3674558.3675767" target="_blank">"KeyChallenge: A Novel Sybil Attack Mitigation Technique Based on Cryptographic Key Generation."</a>
+                        Proceedings of the 2024 10th ACM International Conference on Computer Technology Applications,
+                        2024.
+                    </li>
+                    <li>
+                        S. Solat, A. Mabrouk. <a href="https://ieeexplore.ieee.org/document/10844479" target="_blank">"Configuring the Parallel Committees Database Architecture through Bayesian Optimization."</a>
+                        The Sixth IEEE International Conference on Blockchain Computing and Applications (BCCA), 2024.
+                    </li>
+                    <li>
+                        S. Solat, P. Calvez, F. Naït-Abdesselam. <a href="https://www.jsoftware.us/vol16/437-TC1032.pdf" target="_blank">"Permissioned vs. Permissionless Blockchain: How and Why There Is Only One Right Choice."</a>
+                        Journal of Software, 16(3), 2021, pp. 95–106.
+                    </li>
+                    <li>
+                        S. Solat, F. Naït-Abdesselam. <a href="https://link.springer.com/chapter/10.1007/978-3-031-50733-5_5" target="_blank">"Sharding Distributed Replication Systems to Improve Scalability and Throughput."</a>
+                        In <em>Building Cybersecurity Applications with Blockchain and Smart Contracts.</em> Cham:
+                        Springer Nature Switzerland, 2023, pp. 101–124.
+                    </li>
+                    <li>
+                        S. Solat. <a href="https://ieeexplore.ieee.org/document/10844427" target="_blank">"Fallacies of Blockchain."</a>
+                        The Sixth IEEE International Conference on Blockchain Computing and Applications (BCCA), 2024.
+                    </li>
+                    <li>
+                        S. Solat, M. Potop-Butucaru. <a href="https://link.springer.com/chapter/10.1007/978-3-319-69084-1_25" target="_blank">"Brief announcement: Zeroblock: Timestamp-free prevention of block-withholding attack in bitcoin."</a>
+                        Stabilization, Safety, and Security of Distributed Systems: 19th International Symposium, SSS
+                        2017, Boston, MA, USA, November 5–8, 2017, Proceedings 19. Springer International Publishing,
+                        2017.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="lang-content lang-fr">
+                <!-- French version -->
+            </div>
+        </div>
+
+        <!-- Content for Menu 3 -->
+        <div id="menu3" class="menu-content">
+            <div class="lang-content lang-en">
+                <h3>Current project</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.inria.fr/en/cupseli" target="_blank"><strong>Cupseli</strong></a> (Collaborative Unified Platform for a Scalable and Efficient Learning
+                        Infrastructure)
+                    </li>
+                    <li>
+                        <em>Collaborators:</em> Inria, Hivenet
+                    </li>
+                </ul>
+
+                <h3>Previous project</h3>
+                <ul>
+                    <li>
+                        <a href="https://eviden.com/industries/public-sector-and-defense/cloud-platform-for-smart-cities/" target="_blank"><strong>CP4SC</strong></a> (Cloud Platform for Smart Cities)
+                    </li>
+                    <li>
+                        <em>Collaborators:</em> Inria, Atos, Eviden, Ericsson, Vertical M2M, IFP Energies Nouvelles
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lang-content lang-fr">
+                <!-- French version -->
+            </div>
+        </div>
+
+        <!-- Content for Menu 4 -->
+        <div id="menu4" class="menu-content">
+            <div class="lang-content lang-en">
+
+                <ol class="cert-list">
+                    <li>
+                        <strong>Machine Learning Specialization</strong> (May 1, 2024)
+                        <ul class="cert-sublist">
+                            <li>Institution: Stanford University</li>
+                            <li>Instructor: Dr. Andrew Ng</li>
+                            <li>Verification: <a href="https://coursera.org/verify/specialization/L6VVXG7W4G57" target="_blank">Certificate Link</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Machine Learning Specialization</strong> (August 23, 2024)
+                        <ul class="cert-sublist">
+                            <li>Institution: University of Washington</li>
+                            <li>Instructor: Professor Carlos Guestrin and Professor Emily Fox</li>
+                            <li>Verification: <a href="https://coursera.org/verify/specialization/R4OIYWMJF7CS" target="_blank">Certificate Link</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>TensorFlow for Deep Learning Specialization</strong> (July 21, 2024)
+                        <ul class="cert-sublist">
+                            <li>Institution: Imperial College London</li>
+                            <li>Instructor: Dr. Kevin Webster</li>
+                            <li>Verification: <a href="https://coursera.org/verify/specialization/GYERUJGXJNMH" target="_blank">Certificate Link</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Deep Learning Specialization</strong> (November 3, 2024)
+                        <ul class="cert-sublist">
+                            <li>Institution: DeepLearning.AI</li>
+                            <li>Instructor: Dr. Andrew Ng</li>
+                            <li>Verification: <a href="https://coursera.org/verify/specialization/VDZ0093I5DO5" target="_blank">Certificate Link</a></li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="lang-content lang-fr">
+                <!-- French version -->
+            </div>
+        </div>
+
+        <!-- Content for Menu 5 -->
+        <div id="menu5" class="menu-content">
+            <div class="lang-content lang-en">
+                <h2>Public GitHub Repositories:</h2>
+
+                <ul class="repo-list">
+                    <li>
+                        <a href="https://github.com/Siamak-Solat/Federated-Learning-for-Occupancy-Prediction-with-Highly-Imbalanced-Non-IID-Low-Volume-Data/tree/main" target="_blank">Federated Learning for Occupancy Prediction with Highly Imbalanced,
+                            Non-IID, Low-Volume Data</a>
+                        <ul class="repo-sublist">
+                            <li>
+                                Developed a working prototype to predict occupancy in BTIC
+                                (Atos Business Technology &amp; Innovation Centre) building zones
+                                (distinct areas of the building) from device connection logs
+                                (network connection records for devices such as laptops and phones,
+                                aggregated every 15 minutes), using federated learning
+                                (models trained locally on each site; only model updates are shared,
+                                no raw data is exchanged).
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/Siamak-Solat/Federated-Learning-with-Differential-Privacy-for-MNIST" target="_blank">Federated Learning with Differential Privacy for MNIST</a>
+                        <ul class="repo-sublist">
+                            <li>
+                                Implemented federated learning with differential privacy for MNIST,
+                                allowing the model to be trained on decentralized data while preserving
+                                user privacy.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/Siamak-Solat/Neural-Translation-Model" target="_blank">Neural Translation Model</a>
+                        <ul class="repo-sublist">
+                            <li>
+                                Implemented a neural translation model using neural network
+                                architectures to translate from English to German.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/Siamak-Solat/Probabilistic-Generative-Models" target="_blank">Probabilistic Generative Models</a>
+                        <ul class="repo-sublist">
+                            <li>
+                                Implemented probabilistic generative models to analyse and generate
+                                new data by learning probability distributions from a dataset.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/Siamak-Solat/Image-Classifier-for-SVHN-Dataset" target="_blank">Image Classifier for SVHN Dataset</a>
+                        <ul class="repo-sublist">
+                            <li>
+                                Implemented an image classifier for the SVHN dataset, which accurately
+                                classifies images of house numbers captured in real-world environments.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/Siamak-Solat/Merkle-Tree-Based-File-Integrity-Verification-System" target="_blank">Merkle Tree-Based File Integrity Verification System</a>
+                        <ul class="repo-sublist">
+                            <li>
+                                Designed a system for verifying file integrity using Merkle trees with
+                                a Flask-based server and client application.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lang-content lang-fr">
+                <!-- French version -->
+            </div>
+        </div>
+
+        <hr />
+    </div>
+</body>
+
+</html>
