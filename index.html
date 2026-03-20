@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/xhtml11/DTD/xhtml11.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
+
+
 <head>
     <title>Siamak Solat</title>
     <meta content="text/HTML; charset=utf-8" http-equiv="content-type" />
@@ -8,6 +10,7 @@
     <meta content="Distributed Databases, NoSQL, Fault-Tolerance, Cybersecurity, Machine Learning" name="Keywords" />
     <meta content="Siamak Solat" name="Author" />
     <meta content="Personal page of Siamak Solat" name="Description" />
+
     <style media="screen" type="text/css">
         body {
             margin: 0;
@@ -49,6 +52,7 @@
         }
 
         .corps h3,
+
         .corps h4 {
             font-size: 100%;
             font-family: "Times New Roman", Times, serif;
@@ -151,6 +155,7 @@
         }
 
         .header-container h1,
+
         .header-container p {
             text-align: left;
             margin-left: 0;
@@ -182,15 +187,23 @@
             display: block;
         }
 
+        .top-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
         .language-selector {
             text-align: right;
-            margin-bottom: 10px;
+            margin-bottom: 0;
         }
 
         .language-selector a {
             margin-left: 10px;
             text-decoration: none;
             color: #1D2D8D;
+
         }
 
         .language-selector a.selected {
@@ -268,7 +281,35 @@
         #menu5 .repo-sublist li {
             margin: 0.15em 0;
         }
+
+        :root {
+            --base-font-size: 16px;
+        }
+
+        .corps {
+            font-size: var(--base-font-size);
+        }
+
+        .zoom-controls {
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .zoom-controls button {
+            margin-right: 6px;
+            padding: 3px 10px;
+            border: 1px solid #356AA0;
+            background: #F5F5F5;
+            color: #1D2D8D;
+            font-family: "Times New Roman", Times, serif;
+            cursor: pointer;
+        }
+
+        .zoom-controls button:hover {
+            text-decoration: underline;
+        }
     </style>
+
     <script type="text/javascript">
         function switchLanguage(lang) {
             localStorage.setItem('selectedLanguage', lang);
@@ -280,19 +321,15 @@
 
         function updateLanguageContent() {
             const lang = localStorage.getItem('selectedLanguage') || 'en';
-
             document.body.setAttribute('data-lang', lang);
-
             const allContent = document.querySelectorAll('.lang-content');
             allContent.forEach(element => {
                 element.classList.remove('active');
             });
-
             const selectedContent = document.querySelectorAll('.lang-' + lang);
             selectedContent.forEach(element => {
                 element.classList.add('active');
             });
-
             const langSelectors = document.querySelectorAll('.language-selector a');
             langSelectors.forEach(element => {
                 element.classList.remove('selected');
@@ -300,12 +337,10 @@
                     element.classList.add('selected');
                 }
             });
-
             const tabContents = document.querySelectorAll('.tabs .lang-content');
             tabContents.forEach(element => {
                 element.classList.remove('active');
             });
-
             const selectedTabContents = document.querySelectorAll('.tabs .lang-' + lang);
             selectedTabContents.forEach(element => {
                 element.classList.add('active');
@@ -319,38 +354,48 @@
                 contents[i].style.backgroundColor = "";
                 contents[i].style.color = "";
             }
-
             var tabs = document.getElementsByClassName("tabs")[0].getElementsByTagName("a");
             for (var i = 0; i < tabs.length; i++) {
                 tabs[i].classList.remove("selected");
             }
-
             document.getElementById(menu).style.display = "block";
             document.getElementById(menu).style.backgroundColor = "#1d303b";
             document.getElementById(menu).style.color = "white";
-
             var selectedTab = Array.from(tabs).find(tab => tab.onclick.toString().includes(menu));
             if (selectedTab) {
                 selectedTab.classList.add("selected");
             }
-
             const lang = localStorage.getItem('selectedLanguage') || 'en';
             const url = new URL(window.location);
             url.hash = menu;
             url.searchParams.set('lang', lang);
             history.replaceState(null, "", url);
-
             updateLanguageContent();
         }
 
-        window.onload = function () {
-            const lang = 'en';
-            localStorage.setItem('selectedLanguage', lang);
+        function applyFontSize(size) {
+            document.documentElement.style.setProperty('--base-font-size', size + 'px');
+            localStorage.setItem('fontSize', size);
+        }
 
+        function changeFontSize(step) {
+            const currentSize = parseInt(localStorage.getItem('fontSize') || '16', 10);
+            const newSize = Math.min(24, Math.max(12, currentSize + step));
+            applyFontSize(newSize);
+        }
+
+        function resetFontSize() {
+            applyFontSize(16);
+        }
+
+        window.onload = function () {
+            const lang = localStorage.getItem('selectedLanguage') || 'en';
+            localStorage.setItem('selectedLanguage', lang);
+            const savedFontSize = parseInt(localStorage.getItem('fontSize') || '16', 10);
+            applyFontSize(savedFontSize);
             const hash = window.location.hash.replace("#", "");
             const defaultMenu = hash || "menu1";
             showContent(defaultMenu);
-
             updateLanguageContent();
         };
     </script>
@@ -358,9 +403,17 @@
 
 <body>
     <div class="corps">
-        <div class="language-selector">
-            <a href="javascript:void(0);" onclick="switchLanguage('en');" data-lang="en">English</a> |
-            <a href="javascript:void(0);" onclick="switchLanguage('fr');" data-lang="fr">Français</a>
+        <div class="top-controls">
+            <div class="zoom-controls">
+                <button type="button" onclick="changeFontSize(1)">A+</button>
+                <button type="button" onclick="changeFontSize(-1)">A-</button>
+                <button type="button" onclick="resetFontSize()">Reset</button>
+            </div>
+
+            <div class="language-selector">
+                <a href="javascript:void(0);" onclick="switchLanguage('en');" data-lang="en">English</a> |
+                <a href="javascript:void(0);" onclick="switchLanguage('fr');" data-lang="fr">Français</a>
+            </div>
         </div>
 
         <div class="header-container">
@@ -368,17 +421,24 @@
                 <img src="Inria_logo_transparent_2.png" alt="Inria_logo" class="logo Inria_logo">
                 <img src="su_logo_2_transparent.png" alt="sb" class="logo su_logo_transparent">
             </div>
+
             <div class="lang-content lang-en">
                 <h1>Siamak Solat</h1>
                 <p>Researcher</p>
-                <p>Affiliated with <a href="https://inria.fr/en" target="_blank" class="header-link">Inria</a> and <a href="https://www.sorbonne-universite.fr/en" target="_blank" class="header-link">Sorbonne University</a></p>
+                <p>Affiliated with <a href="https://inria.fr/en" target="_blank" class="header-link">Inria</a> and <a
+                        href="https://www.sorbonne-universite.fr/en" target="_blank" class="header-link">Sorbonne
+                        University</a></p>
                 <p>Email: siamak.solat @ inria.fr</p>
                 <p>Address: 48 Rue Barrault, 75013 Paris</p>
             </div>
+
             <div class="lang-content lang-fr">
+
                 <h1>Siamak Solat</h1>
                 <p>Chercheur</p>
-                <p>Affilié à <a href="https://www.inria.fr/fr" target="_blank" class="header-link">Inria</a> et à <a href="https://www.sorbonne-universite.fr/" target="_blank" class="header-link">Sorbonne Université</a></p>
+                <p>Affilié à <a href="https://www.inria.fr/fr" target="_blank" class="header-link">Inria</a> et à <a
+                        href="https://www.sorbonne-universite.fr/" target="_blank" class="header-link">Sorbonne
+                        Université</a></p>
                 <p>E-mail : siamak.solat @ inria.fr</p>
                 <p>Adresse: 48 Rue Barrault, 75013 Paris</p>
             </div>
@@ -394,14 +454,17 @@
                 <span class="lang-content lang-en">Publications</span>
                 <span class="lang-content lang-fr">Publications</span>
             </a>
+
             <a href="javascript:void(0);" onclick="showContent('menu3');" class="en-only-tab">
                 <span class="lang-content lang-en">Projects</span>
                 <span class="lang-content lang-fr">Projets</span>
             </a>
+
             <a href="javascript:void(0);" onclick="showContent('menu4');" class="en-only-tab">
                 <span class="lang-content lang-en">Certificates</span>
                 <span class="lang-content lang-fr">Certificats</span>
             </a>
+
             <a href="javascript:void(0);" onclick="showContent('menu5');" class="en-only-tab">
                 <span class="lang-content lang-en">Repositories</span>
                 <span class="lang-content lang-fr">Dépôts</span>
@@ -412,49 +475,102 @@
         <div id="menu1" class="menu-content">
             <div class="lang-content lang-en">
                 <p>
-                    I am currently working at <a href="https://www.inria.fr/en/inria-paris-centre" target="_blank">Inria Paris</a> and a member of the <a href="https://team.inria.fr/mimove/" target="_blank">MiMove</a> team.
+                    I am currently working at <a href="https://www.inria.fr/en/inria-paris-centre" target="_blank">Inria
+                        Paris</a> and a member of the <a href="https://team.inria.fr/mimove/" target="_blank">MiMove</a>
+                    team.
                 </p>
+
                 <p>
-                    My current work focuses on robust, large-scale machine learning under resource volatility within the <a href="https://www.inria.fr/en/cupseli" target="_blank">Cupseli</a> project, a joint research initiative between <a href="https://inria.fr/en" target="_blank" class="header-link">Inria</a> and <a href="https://www.hivenet.com/" target="_blank">Hivenet</a>. The project explores globally distributed, heterogeneous, and highly volatile computing resources, where nodes continuously join and leave the network.
+                    My current work focuses on robust, large-scale machine learning under resource volatility within the
+                    <a href="https://www.inria.fr/en/cupseli" target="_blank">Cupseli</a> project, a joint research
+                    initiative between <a href="https://inria.fr/en" target="_blank" class="header-link">Inria</a> and
+                    <a href="https://www.hivenet.com/" target="_blank">Hivenet</a>. The project explores globally
+                    distributed, heterogeneous, and highly volatile computing resources, where nodes continuously join
+                    and leave the network.
                 </p>
+
                 <p>
-                    Although I already hold a PhD in Computer Science, my current research will lead to a second PhD in Computer Science from <a href="https://www.sorbonne-universite.fr/en" target="_blank">Sorbonne University</a>.
+                    Although I already hold a PhD in Computer Science, my current research will lead to a second PhD in
+                    Computer Science from <a href="https://www.sorbonne-universite.fr/en" target="_blank">Sorbonne
+                        University</a>.
                 </p>
+
                 <p>
-                    I previously earned my first PhD in Computer Science from the <a href="https://en.wikipedia.org/wiki/Paris_Cit%C3%A9_University" target="_blank">University of Paris</a> (now Université Paris Cité) where I designed a scalable, secure, and fault-tolerant distributed NoSQL database architecture for transactional workloads in very large-scale peer-to-peer networks.
+                    I previously earned my first PhD in Computer Science from the <a
+                        href="https://en.wikipedia.org/wiki/Paris_Cit%C3%A9_University" target="_blank">University of
+                        Paris</a> (now Université Paris Cité) where I designed a scalable, secure, fault-tolerant
+                    distributed NoSQL database architecture for transactional workloads in very large-scale peer-to-peer
+                    networks.
                 </p>
+
                 <p>
-                    I also hold a Master’s degree in Computer Science from <a href="https://www.sorbonne-universite.fr/en" target="_blank">Sorbonne University</a>, with a specialization in Computer Networks, Telecommunications, and Information Security. The program was co-accredited with <a href="https://www.telecom-paris.fr/en/home" target="_blank">Télécom Paris</a>.
+                    I also hold a Master’s degree in Computer Science from <a
+                        href="https://www.sorbonne-universite.fr/en" target="_blank">Sorbonne University</a>, with a
+                    specialization in Computer Networks, Telecommunications, and Information Security. The program was
+                    co-accredited with <a href="https://www.telecom-paris.fr/en/home" target="_blank">Télécom Paris</a>.
                 </p>
+
                 <p>
-                    I also hold a University Research Diploma from <a href="https://www.sorbonne-universite.fr/en" target="_blank">Sorbonne University</a> focused on Bitcoin security, particularly against malicious mining strategies such as selfish mining.
+                    I also hold a University Research Diploma from <a href="https://www.sorbonne-universite.fr/en"
+                        target="_blank">Sorbonne University</a> focused on Bitcoin security, particularly against
+                    malicious mining strategies such as selfish mining.
                 </p>
+
                 <p>
-                    My research interests include machine learning, large-scale peer-to-peer networks, and robust, high-performance distributed systems.
+                    My research interests include machine learning, large-scale peer-to-peer networks, and robust,
+                    high-performance distributed systems.
                 </p>
             </div>
+
             <div class="lang-content lang-fr">
                 <p>
-                    Je travaille actuellement à <a href="https://www.inria.fr/fr/centre-inria-de-paris" target="_blank">Inria Paris</a>, au sein de l’équipe <a href="https://team.inria.fr/mimove/" target="_blank">MiMove</a>.
+                    Je travaille actuellement à <a href="https://www.inria.fr/fr/centre-inria-de-paris"
+                        target="_blank">Inria Paris</a>, au sein de l’équipe <a href="https://team.inria.fr/mimove/"
+                        target="_blank">MiMove</a>.
                 </p>
-                <p>
-                    Mes recherches actuelles s’inscrivent dans le cadre du projet <a href="https://www.inria.fr/fr/cupseli" target="_blank">Cupseli</a>, une collaboration entre <a href="https://www.inria.fr/fr" target="_blank">Inria</a> et <a href="https://www.hivenet.com/" target="_blank">Hivenet</a>, et portent sur l’apprentissage automatique robuste à grande échelle dans des environnements caractérisés par une forte volatilité des ressources. Ce projet s’intéresse à des infrastructures de calcul distribuées à l’échelle mondiale, hétérogènes et très dynamiques, dans lesquelles les nœuds rejoignent et quittent continuellement le réseau.
 
-                </p>
                 <p>
-                    Déjà titulaire d’un premier doctorat en informatique, je mène actuellement des travaux qui conduiront à l’obtention d’un second doctorat en informatique à <a href="https://www.sorbonne-universite.fr" target="_blank">Sorbonne Université</a>.
+                    Mes recherches actuelles s’inscrivent dans le cadre du projet <a
+                        href="https://www.inria.fr/fr/cupseli" target="_blank">Cupseli</a>, une collaboration entre <a
+                        href="https://www.inria.fr/fr" target="_blank">Inria</a> et <a href="https://www.hivenet.com/"
+                        target="_blank">Hivenet</a>, et portent sur l’apprentissage automatique robuste à grande échelle
+                    dans des environnements caractérisés par une forte volatilité des ressources. Ce projet s’intéresse
+                    à des infrastructures de calcul distribuées à l’échelle mondiale, hétérogènes et très dynamiques,
+                    dans lesquelles les nœuds rejoignent et quittent continuellement le réseau.
                 </p>
+
                 <p>
-                    J’ai obtenu mon premier doctorat en informatique à <a href="https://fr.wikipedia.org/wiki/Universit%C3%A9_Paris-Cit%C3%A9" target="_blank">l’Université de Paris</a> (devenue Université Paris Cité), où j’ai conçu une architecture de base de données NoSQL distribuée, sécurisée, tolérante aux pannes et conçue pour le passage à l’échelle, destinée à des charges transactionnelles dans des réseaux pair à pair de très grande dimension.
+                    Déjà titulaire d’un premier doctorat en informatique, je mène actuellement des travaux qui
+                    conduiront à l’obtention d’un second doctorat en informatique à <a
+                        href="https://www.sorbonne-universite.fr" target="_blank">Sorbonne Université</a>.
                 </p>
+
                 <p>
-                    Je suis également titulaire d’un master en informatique de <a href="https://www.sorbonne-universite.fr" target="_blank">Sorbonne Université</a>, avec une spécialisation en réseaux, télécommunications et sécurité des systèmes d’information, coaccrédité avec <a href="https://www.telecom-paris.fr/" target="_blank">Télécom Paris</a>.
+                    J’ai obtenu mon premier doctorat en informatique à <a
+                        href="https://fr.wikipedia.org/wiki/Universit%C3%A9_Paris-Cit%C3%A9"
+                        target="_blank">l’Université de Paris</a> (devenue Université Paris Cité), où j’ai conçu une
+                    architecture de base de données NoSQL distribuée, sécurisée, tolérante aux pannes et conçue pour le
+                    passage à l’échelle, destinée à des charges transactionnelles dans des réseaux pair à pair de très
+                    grande dimension.
                 </p>
+
                 <p>
-                    J’ai par ailleurs obtenu un diplôme universitaire de recherche à <a href="https://www.sorbonne-universite.fr" target="_blank">Sorbonne Université</a>, consacré à la sécurité de Bitcoin, notamment face à des stratégies de minage malveillantes telles que le selfish mining.
+                    Je suis également titulaire d’un master en informatique de <a
+                        href="https://www.sorbonne-universite.fr" target="_blank">Sorbonne Université</a>, avec une
+                    spécialisation en réseaux, télécommunications et sécurité des systèmes d’information, coaccrédité
+                    avec <a href="https://www.telecom-paris.fr/" target="_blank">Télécom Paris</a>.
                 </p>
+
                 <p>
-                    Mes travaux de recherche portent principalement sur l’apprentissage automatique, les réseaux pair à pair à grande échelle, ainsi que les systèmes distribués robustes et performants.
+                    J’ai par ailleurs obtenu un diplôme universitaire de recherche à <a
+                        href="https://www.sorbonne-universite.fr" target="_blank">Sorbonne Université</a>, consacré à la
+                    sécurité de Bitcoin, notamment face à des stratégies de minage malveillantes telles que le selfish
+                    mining.
+                </p>
+
+                <p>
+                    Mes travaux de recherche portent principalement sur l’apprentissage automatique, les réseaux pair à
+                    pair à grande échelle, ainsi que les systèmes distribués robustes et performants.
                 </p>
             </div>
         </div>
@@ -470,6 +586,7 @@
                             NoSQL database architecture."</a>
                         Cluster Computing, Volume 28, Article 254, 25 February 2025.
                     </li>
+
                     <li>
                         S. Solat. <a href="https://dl.acm.org/doi/10.1145/3674558.3675767"
                             target="_blank">"KeyChallenge: A Novel Sybil Attack Mitigation Technique Based on
@@ -477,18 +594,21 @@
                         Proceedings of the 2024 10th ACM International Conference on Computer Technology Applications,
                         2024.
                     </li>
+
                     <li>
                         S. Solat, A. Mabrouk. <a href="https://ieeexplore.ieee.org/document/10844479"
                             target="_blank">"Configuring the Parallel Committees Database Architecture through Bayesian
                             Optimization."</a>
                         The Sixth IEEE International Conference on Blockchain Computing and Applications (BCCA), 2024.
                     </li>
+
                     <li>
                         S. Solat, P. Calvez, F. Naït-Abdesselam. <a href="https://www.jsoftware.us/vol16/437-TC1032.pdf"
                             target="_blank">"Permissioned vs. Permissionless Blockchain: How and Why There Is Only One
                             Right Choice."</a>
                         Journal of Software, 16(3), 2021, pp. 95–106.
                     </li>
+
                     <li>
                         S. Solat, F. Naït-Abdesselam. <a
                             href="https://link.springer.com/chapter/10.1007/978-3-031-50733-5_5"
@@ -497,11 +617,13 @@
                         In <em>Building Cybersecurity Applications with Blockchain and Smart Contracts.</em> Cham:
                         Springer Nature Switzerland, 2023, pp. 101–124.
                     </li>
+
                     <li>
                         S. Solat. <a href="https://ieeexplore.ieee.org/document/10844427" target="_blank">"Fallacies of
                             Blockchain."</a>
                         The Sixth IEEE International Conference on Blockchain Computing and Applications (BCCA), 2024.
                     </li>
+
                     <li>
                         S. Solat, M. Potop-Butucaru. <a
                             href="https://link.springer.com/chapter/10.1007/978-3-319-69084-1_25" target="_blank">"Brief
@@ -529,6 +651,7 @@
                         (Collaborative Unified Platform for a Scalable and Efficient Learning
                         Infrastructure)
                     </li>
+
                     <li>
                         <em>Collaborators:</em> Inria, Hivenet
                     </li>
@@ -540,6 +663,7 @@
                         <a href="https://eviden.com/industries/public-sector-and-defense/cloud-platform-for-smart-cities/"
                             target="_blank"><strong>CP4SC</strong></a> (Cloud Platform for Smart Cities)
                     </li>
+
                     <li>
                         <em>Collaborators:</em> Inria, Atos, Eviden, Ericsson, Vertical M2M, IFP Energies Nouvelles
                     </li>
@@ -554,7 +678,6 @@
         <!-- Content for Menu 4 -->
         <div id="menu4" class="menu-content">
             <div class="lang-content lang-en">
-
                 <ol class="cert-list">
                     <li>
                         <strong>Machine Learning Specialization</strong> (May 1, 2024)
@@ -607,7 +730,6 @@
         <div id="menu5" class="menu-content">
             <div class="lang-content lang-en">
                 <h2>Public GitHub Repositories:</h2>
-
                 <ul class="repo-list">
                     <li>
                         <a href="https://github.com/Siamak-Solat/Federated-Learning-for-Occupancy-Prediction-with-Highly-Imbalanced-Non-IID-Low-Volume-Data/tree/main"
@@ -639,6 +761,7 @@
                     </li>
 
                     <li>
+
                         <a href="https://github.com/Siamak-Solat/Neural-Translation-Model" target="_blank">Neural
                             Translation Model</a>
                         <ul class="repo-sublist">
@@ -661,6 +784,7 @@
                     </li>
 
                     <li>
+
                         <a href="https://github.com/Siamak-Solat/Image-Classifier-for-SVHN-Dataset"
                             target="_blank">Image Classifier for SVHN Dataset</a>
                         <ul class="repo-sublist">
@@ -670,25 +794,22 @@
                             </li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="https://github.com/Siamak-Solat/Merkle-Tree-Based-File-Integrity-Verification-System"
                             target="_blank">Merkle Tree-Based File Integrity Verification System</a>
                         <ul class="repo-sublist">
                             <li>
-                                Designed a system for verifying file integrity using Merkle trees with
-                                a Flask-based server and client application.
+                                Designed a system for verifying file integrity using Merkle trees with a Flask-based
+                                server and client application.
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
-
             <div class="lang-content lang-fr">
                 <!-- French version -->
             </div>
         </div>
-
         <hr />
     </div>
 </body>
