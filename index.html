@@ -371,19 +371,19 @@
             updateLanguageContent();
         }
 
-function applyFontSize(size) {
-    document.documentElement.style.setProperty('--base-font-size', size + 'px');
-}
+        function applyFontSize(size) {
+            document.documentElement.style.setProperty('--base-font-size', size + 'px');
+        }
 
-function changeFontSize(step) {
-    const currentSize = parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue('--base-font-size'),
-        10
-    ) || 16;
+        function changeFontSize(step) {
+            const currentSize = parseInt(
+                getComputedStyle(document.documentElement).getPropertyValue('--base-font-size'),
+                10
+            ) || 16;
 
-    const newSize = Math.min(24, Math.max(12, currentSize + step));
-    applyFontSize(newSize);
-}
+            const newSize = Math.min(24, Math.max(12, currentSize + step));
+            applyFontSize(newSize);
+        }
 
         function resetFontSize() {
             applyFontSize(16);
@@ -392,7 +392,7 @@ function changeFontSize(step) {
         window.onload = function () {
             const lang = localStorage.getItem('selectedLanguage') || 'en';
             localStorage.setItem('selectedLanguage', lang);
-applyFontSize(16);
+            applyFontSize(16);
             const hash = window.location.hash.replace("#", "");
             const defaultMenu = hash || "menu1";
             showContent(defaultMenu);
