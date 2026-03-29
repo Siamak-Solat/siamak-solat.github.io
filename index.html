@@ -241,100 +241,87 @@
             list-style-type: circle;
         }
 
-        /* 4th level: custom dash marker */
         #menu3 ul ul ul ul {
-            list-style-type: none;
-            margin-left: 1.2em;
-            padding-left: 0;
+            list-style-type: "▸";
         }
 
-        #menu3 ul ul ul ul li {
-            position: relative;
-            padding-left: 1em;
+        .header-container .lang-content h1 {
+            margin-bottom: 10px;
         }
 
-        #menu3 ul ul ul ul li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
+        .header-container .lang-content h1 {
+            display: block;
+            margin-bottom: 10px;
+        }
 
-            .header-container .lang-content h1 {
-                margin-bottom: 10px;
-            }
+        #menu4 .cert-heading {
+            margin-bottom: 0.7em;
+        }
 
-            .header-container .lang-content h1 {
-                display: block;
-                margin-bottom: 10px;
-            }
+        #menu4 .cert-list {
+            margin-left: 1.5em;
+        }
 
-            #menu4 .cert-heading {
-                margin-bottom: 0.7em;
-            }
+        #menu4 .cert-list>li {
+            margin-bottom: 0.9em;
+        }
 
-            #menu4 .cert-list {
-                margin-left: 1.5em;
-            }
+        #menu4 .cert-sublist {
+            list-style-type: circle;
+            margin-top: 0.3em;
+            margin-bottom: 0;
+            padding-left: 1.2em;
+        }
 
-            #menu4 .cert-list>li {
-                margin-bottom: 0.9em;
-            }
+        #menu4 .cert-sublist li {
+            margin: 0.15em 0;
+        }
 
-            #menu4 .cert-sublist {
-                list-style-type: circle;
-                margin-top: 0.3em;
-                margin-bottom: 0;
-                padding-left: 1.2em;
-            }
+        #menu5 .repo-list {
+            list-style-type: disc;
+            margin-left: 1.5em;
+        }
 
-            #menu4 .cert-sublist li {
-                margin: 0.15em 0;
-            }
+        #menu5 .repo-list>li {
+            margin-bottom: 0.8em;
+        }
 
-            #menu5 .repo-list {
-                list-style-type: disc;
-                margin-left: 1.5em;
-            }
+        #menu5 .repo-sublist {
+            list-style-type: circle;
+            margin-top: 0.25em;
+            padding-left: 1.2em;
+        }
 
-            #menu5 .repo-list>li {
-                margin-bottom: 0.8em;
-            }
+        #menu5 .repo-sublist li {
+            margin: 0.15em 0;
+        }
 
-            #menu5 .repo-sublist {
-                list-style-type: circle;
-                margin-top: 0.25em;
-                padding-left: 1.2em;
-            }
+        :root {
+            --base-font-size: 16px;
+        }
 
-            #menu5 .repo-sublist li {
-                margin: 0.15em 0;
-            }
+        .corps {
+            font-size: var(--base-font-size);
+        }
 
-            :root {
-                --base-font-size: 16px;
-            }
+        .zoom-controls {
+            text-align: left;
+            margin-bottom: 0;
+        }
 
-            .corps {
-                font-size: var(--base-font-size);
-            }
+        .zoom-controls button {
+            margin-right: 6px;
+            padding: 3px 10px;
+            border: 1px solid #356AA0;
+            background: #F5F5F5;
+            color: #1D2D8D;
+            font-family: "Times New Roman", Times, serif;
+            cursor: pointer;
+        }
 
-            .zoom-controls {
-                text-align: left;
-                margin-bottom: 0;
-            }
-
-            .zoom-controls button {
-                margin-right: 6px;
-                padding: 3px 10px;
-                border: 1px solid #356AA0;
-                background: #F5F5F5;
-                color: #1D2D8D;
-                font-family: "Times New Roman", Times, serif;
-                cursor: pointer;
-            }
-
-            .zoom-controls button:hover {
-                text-decoration: underline;
-            }
+        .zoom-controls button:hover {
+            text-decoration: underline;
+        }
     </style>
 
     <script type="text/javascript">
