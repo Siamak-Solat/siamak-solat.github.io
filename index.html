@@ -241,8 +241,22 @@
             list-style-type: circle;
         }
 
+        /* 4th level: custom dash marker */
         #menu3 ul ul ul ul {
-            list-style-type: "▸";
+            list-style-type: none;
+            margin-left: 1.2em;
+            padding-left: 0;
+        }
+
+        #menu3 ul ul ul ul li {
+            position: relative;
+            padding-left: 1em;
+        }
+
+        #menu3 ul ul ul ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
         }
 
         .header-container .lang-content h1 {
