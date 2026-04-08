@@ -155,12 +155,46 @@
         }
 
         .header-container h1,
-
         .header-container p {
             text-align: left;
             margin-left: 0;
             margin-top: 0;
             margin-bottom: 5px;
+        }
+
+        .header-info-row {
+            margin-top: 10px;
+        }
+
+        .header-info-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 30px;
+            margin-bottom: 5px;
+        }
+
+        .header-info-left {
+            flex: 1;
+            text-align: left;
+        }
+
+        .header-info-right {
+            min-width: 230px;
+            text-align: right;
+        }
+
+        .profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: red !important;
+        }
+
+        .profile-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
         }
 
         .logo {
@@ -456,25 +490,115 @@
 
             <div class="lang-content lang-en">
                 <h1>Siamak Solat</h1>
-                <p>Researcher</p>
-                <p>Affiliated with <a href="https://inria.fr/en" target="_blank" class="header-link">Inria</a> and <a
-                        href="https://www.sorbonne-universite.fr/en/university/about-us/history" target="_blank"
-                        class="header-link">Sorbonne
-                        University</a></p>
-                <p>Email: siamak.solat @ inria.fr</p>
-                <p>Address: 48 Rue Barrault, 75013 Paris</p>
+
+                <div class="header-info-row">
+                    <div class="header-info-line">
+                        <div class="header-info-left">Researcher</div>
+                        <div class="header-info-right">
+                            <a href="https://scholar.google.com/citations?user=i8fk4HcAAAAJ&amp;hl=en" target="_blank"
+                                class="profile-link">
+                                <img src="https://www.google.com/s2/favicons?domain=scholar.google.com&amp;sz=32"
+                                    alt="Google Scholar" class="profile-icon" />
+                                Google Scholar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="header-info-line">
+                        <div class="header-info-left">
+                            Affiliated with <a href="https://inria.fr/en" target="_blank" class="header-link">Inria</a>
+                            and <a href="https://www.sorbonne-universite.fr/en/university/about-us/history"
+                                target="_blank" class="header-link">Sorbonne University</a>
+                        </div>
+                        <div class="header-info-right">
+                            <a href="https://www.researchgate.net/profile/Siamak-Solat" target="_blank"
+                                class="profile-link">
+                                <img src="https://www.google.com/s2/favicons?domain=researchgate.net&amp;sz=32"
+                                    alt="ResearchGate" class="profile-icon" />
+                                ResearchGate
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="header-info-line">
+                        <div class="header-info-left">Email: siamak.solat@inria.fr</div>
+                        <div class="header-info-right">
+                            <a href="https://dblp.org/pid/180/5433.html" target="_blank" class="profile-link">
+                                <img src="https://www.google.com/s2/favicons?domain=dblp.org&amp;sz=32" alt="DBLP"
+                                    class="profile-icon" />
+                                DBLP
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="header-info-line">
+                        <div class="header-info-left">Address: 48 Rue Barrault, 75013 Paris</div>
+                        <div class="header-info-right">
+                            <a href="https://orcid.org/0000-0002-4279-6022" target="_blank" class="profile-link">
+                                <img src="https://www.google.com/s2/favicons?domain=orcid.org&amp;sz=32" alt="ORCID"
+                                    class="profile-icon" />
+                                ORCID
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="lang-content lang-fr">
-
                 <h1>Siamak Solat</h1>
-                <p>Chercheur</p>
-                <p>Affilié à <a href="https://www.inria.fr/fr" target="_blank" class="header-link">Inria</a> et à <a
-                        href="https://www.sorbonne-universite.fr/universite/politique-detablissement/histoire-de-sorbonne-universite"
-                        target="_blank" class="header-link">Sorbonne
-                        Université</a></p>
-                <p>E-mail : siamak.solat @ inria.fr</p>
-                <p>Adresse: 48 Rue Barrault, 75013 Paris</p>
+
+                <div class="header-info-row">
+                    <div class="header-info-line">
+                        <div class="header-info-left">Chercheur</div>
+                        <div class="header-info-right">
+                            <a href="https://scholar.google.com/citations?user=i8fk4HcAAAAJ&amp;hl=en" target="_blank"
+                                class="profile-link">
+                                <img src="https://www.google.com/s2/favicons?domain=scholar.google.com&amp;sz=32"
+                                    alt="Google Scholar" class="profile-icon" />
+                                Google Scholar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="header-info-line">
+                        <div class="header-info-left">
+                            Affilié à <a href="https://www.inria.fr/fr" target="_blank" class="header-link">Inria</a> et
+                            à
+                            <a href="https://www.sorbonne-universite.fr/universite/politique-detablissement/histoire-de-sorbonne-universite"
+                                target="_blank" class="header-link">Sorbonne Université</a>
+                        </div>
+                        <div class="header-info-right">
+                            <a href="https://www.researchgate.net/profile/Siamak-Solat" target="_blank"
+                                class="profile-link">
+                                <img src="https://www.google.com/s2/favicons?domain=researchgate.net&amp;sz=32"
+                                    alt="ResearchGate" class="profile-icon" />
+                                ResearchGate
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="header-info-line">
+                        <div class="header-info-left">E-mail : siamak.solat@inria.fr</div>
+                        <div class="header-info-right">
+                            <a href="https://dblp.org/pid/180/5433.html" target="_blank" class="profile-link">
+                                <img src="https://www.google.com/s2/favicons?domain=dblp.org&amp;sz=32" alt="DBLP"
+                                    class="profile-icon" />
+                                DBLP
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="header-info-line">
+                        <div class="header-info-left">Adresse: 48 Rue Barrault, 75013 Paris</div>
+                        <div class="header-info-right">
+                            <a href="https://orcid.org/0000-0002-4279-6022" target="_blank" class="profile-link">
+                                <img src="https://www.google.com/s2/favicons?domain=orcid.org&amp;sz=32" alt="ORCID"
+                                    class="profile-icon" />
+                                ORCID
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
