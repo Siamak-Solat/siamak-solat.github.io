@@ -433,6 +433,11 @@
             background: transparent;
         }
 
+        .header-container .lang-content h1 {
+            text-align: center;
+            font-style: italic;
+        }
+
         .corps h2 {
             font-size: 1.2em;
             font-family: "Avenir Next Demi Bold", "Avenir Next", "Segoe UI", sans-serif;
@@ -555,7 +560,7 @@
         }
 
         .logo-container {
-            margin-bottom: 12px;
+            margin-bottom: 0;
         }
 
         .header-info-row {
@@ -854,6 +859,11 @@
                 <button type="button" onclick="resetFontSize()">Reset</button>
             </div>
 
+            <div class="logo-container">
+                <img src="Inria_logo_transparent_2.png" alt="Inria_logo" class="logo Inria_logo">
+                <img src="su_logo_2_transparent.png" alt="sb" class="logo su_logo_transparent">
+            </div>
+
             <div class="language-selector">
                 <a href="javascript:void(0);" onclick="switchLanguage('en');" data-lang="en">English</a> |
                 <a href="javascript:void(0);" onclick="switchLanguage('fr');" data-lang="fr">Français</a>
@@ -861,11 +871,6 @@
         </div>
 
         <div class="header-container">
-            <div class="logo-container">
-                <img src="Inria_logo_transparent_2.png" alt="Inria_logo" class="logo Inria_logo">
-                <img src="su_logo_2_transparent.png" alt="sb" class="logo su_logo_transparent">
-            </div>
-
             <div class="lang-content lang-en">
                 <h1>Siamak Solat</h1>
 
