@@ -33,109 +33,12 @@
             text-align: left;
         }
 
-        .header-container .header-link {
-            color: red;
-        }
-
-        .corps h1 {
-            font-size: 140%;
-            font-family: "Times New Roman", Times, serif;
-            color: #2D4D4D;
-            background: #f2f3f4;
-            display: inline;
-        }
-
-        .corps h2 {
-            font-size: 115%;
-            font-family: "Times New Roman", Times, serif;
-            color: #2D5D5D;
-            background: #f2f3f4;
-        }
-
-        .corps h3,
-
-        .corps h4 {
-            font-size: 100%;
-            font-family: "Times New Roman", Times, serif;
-            color: #2D6D6D;
-            background: #f2f3f4;
-        }
-
-        .corps p {
-            text-align: justify;
-        }
-
         .corps ul {
             list-style-type: square;
         }
 
-        .corps li {
-            padding: 0 2px;
-        }
-
-        .corps b {
-            font-family: "Times New Roman", Times, serif;
-        }
-
-        .corps a {
-            text-decoration: none;
-            font-family: "Times New Roman", Times, serif;
-            color: #a0d3f3;
-            background: transparent;
-        }
-
-        .tabs a {
-            text-decoration: none;
-        }
-
-        .corps a:hover {
-            text-decoration: underline;
-        }
-
-        .tabs {
-            margin: 0 0px;
-            padding: 0 10px;
-            border-bottom: 1px solid #356AA0;
-            margin-left: 0cm;
-        }
-
-        .tabs a {
-            margin-right: 10px;
-            padding: 0 10px;
-            border: 1px solid #356AA0;
-            color: #1D2D8D;
-            background: #F5F5F5;
-        }
-
-        .tabs a.selected {
-            border-bottom: none;
-            color: white;
-            background: #30475a;
-        }
-
-        .menu-content {
-            display: none;
-            background-color: #356AA0;
-            color: white;
-            padding: 15px;
-        }
-
         #menu1 {
             display: block;
-        }
-
-        .menu-content h1,
-        .menu-content h2,
-        .menu-content h3,
-        .menu-content h4 {
-            color: inherit;
-            background: inherit;
-        }
-
-        .pied {
-            margin: 0 -50px;
-            padding: 15px 50px;
-            border-top: 1px solid #356AA0;
         }
 
         hr {
@@ -153,6 +56,7 @@
         .logo-container {
             text-align: center;
             margin-top: 0;
+            margin-bottom: 0;
         }
 
         .header-container h1,
@@ -189,13 +93,13 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            color: red !important;
         }
 
         .profile-icon {
             width: 16px;
             height: 16px;
             vertical-align: middle;
+            border-radius: 3px;
         }
 
         .logo {
@@ -222,30 +126,6 @@
             display: block;
         }
 
-        .top-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .language-selector {
-            text-align: right;
-            margin-bottom: 0;
-        }
-
-        .language-selector a {
-            margin-left: 10px;
-            text-decoration: none;
-            color: #1D2D8D;
-
-        }
-
-        .language-selector a.selected {
-            font-weight: bold;
-            text-decoration: underline;
-        }
-
         .tabs a .lang-content {
             display: none;
         }
@@ -256,14 +136,6 @@
 
         body[data-lang="fr"] .tabs .en-only-tab {
             display: none;
-        }
-
-        #menu2 .lang-en ol li {
-            margin-bottom: 0.5em;
-        }
-
-        #menu3 .lang-en ul li+li {
-            margin-top: 0.4em;
         }
 
         #menu3 ul {
@@ -294,15 +166,6 @@
             content: "▸";
             position: absolute;
             left: 0;
-        }
-
-        .header-container .lang-content h1 {
-            margin-bottom: 10px;
-        }
-
-        .header-container .lang-content h1 {
-            display: block;
-            margin-bottom: 10px;
         }
 
         #menu4 .cert-heading {
@@ -347,32 +210,11 @@
             margin: 0.15em 0;
         }
 
-        :root {
-            --base-font-size: 13px;
-        }
-
-        .corps {
-            font-size: var(--base-font-size);
-        }
-
         .zoom-controls {
             text-align: left;
             margin-bottom: 0;
         }
 
-        .zoom-controls button {
-            margin-right: 6px;
-            padding: 3px 10px;
-            border: 1px solid #356AA0;
-            background: #F5F5F5;
-            color: #1D2D8D;
-            font-family: "Times New Roman", Times, serif;
-            cursor: pointer;
-        }
-
-        .zoom-controls button:hover {
-            text-decoration: underline;
-        }
     </style>
 
     <style media="screen" type="text/css">
@@ -434,6 +276,8 @@
         }
 
         .header-container .lang-content h1 {
+            display: block;
+            margin-bottom: 10px;
             text-align: center;
             font-style: italic;
         }
@@ -456,11 +300,13 @@
         }
 
         .corps p {
+            text-align: justify;
             margin: 0 0 0.95em;
             color: #223a53;
         }
 
         .corps li {
+            padding: 0 2px;
             color: #233a52;
         }
 
@@ -469,8 +315,10 @@
         }
 
         .corps a {
+            text-decoration: none;
             font-family: inherit;
             color: var(--brand);
+            background: transparent;
             transition: color 0.2s ease, opacity 0.2s ease;
         }
 
@@ -480,6 +328,7 @@
         }
 
         .tabs {
+            margin: 0;
             padding: 0 0 1px;
             border-bottom: 1px solid #9fbcda;
             display: flex;
@@ -488,6 +337,7 @@
         }
 
         .tabs a {
+            text-decoration: none;
             margin-right: 0;
             padding: 8px 14px;
             border: 1px solid #a8c5df;
@@ -515,6 +365,7 @@
         }
 
         .menu-content {
+            display: none;
             background: linear-gradient(160deg, var(--content-bg-1) 0%, var(--content-bg-2) 100%);
             color: #f4f8fd;
             padding: 18px 20px;
@@ -538,12 +389,12 @@
         }
 
         .menu-content a {
-            color: #8fd3ff;
+            color: #fde97a;
             text-underline-offset: 2px;
         }
 
         .menu-content a:hover {
-            color: #c3e8ff;
+            color: #ffc5c3;
         }
 
         .pied {
@@ -557,10 +408,6 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(201, 220, 237, 0.75), transparent);
             margin: 20px 0 0;
-        }
-
-        .logo-container {
-            margin-bottom: 0;
         }
 
         .header-info-row {
@@ -601,15 +448,14 @@
             text-decoration: none !important;
         }
 
-        .profile-icon {
-            border-radius: 3px;
-        }
-
         .logo {
             filter: drop-shadow(0 2px 5px rgba(20, 44, 69, 0.14));
         }
 
         .top-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 12px;
             padding: 10px 12px;
             border: 1px solid #d6e4f1;
@@ -618,16 +464,22 @@
         }
 
         .language-selector {
+            text-align: right;
+            margin-bottom: 0;
             color: #54708d;
         }
 
         .language-selector a {
+            margin-left: 10px;
+            text-decoration: none;
             color: #245880;
             font-weight: 600;
             transition: color 0.2s ease;
         }
 
         .language-selector a.selected {
+            font-weight: bold;
+            text-decoration: underline;
             color: #163f61;
             text-decoration-thickness: 2px;
             text-underline-offset: 2px;
@@ -650,6 +502,7 @@
         }
 
         .zoom-controls button {
+            margin-right: 6px;
             padding: 5px 12px;
             border: 1px solid #afcae0;
             border-radius: 8px;
@@ -657,6 +510,7 @@
             color: #215077;
             font-family: "Avenir Next", "Segoe UI", "Calibri", sans-serif;
             font-weight: 600;
+            cursor: pointer;
             transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
         }
 
@@ -778,14 +632,6 @@
                     element.classList.add('selected');
                 }
             });
-            const tabContents = document.querySelectorAll('.tabs .lang-content');
-            tabContents.forEach(element => {
-                element.classList.remove('active');
-            });
-            const selectedTabContents = document.querySelectorAll('.tabs .lang-' + lang);
-            selectedTabContents.forEach(element => {
-                element.classList.add('active');
-            });
         }
 
         function showContent(menu) {
@@ -845,7 +691,6 @@
             const hash = window.location.hash.replace("#", "");
             const defaultMenu = hash || "menu1";
             showContent(defaultMenu);
-            updateLanguageContent();
         };
     </script>
 </head>
