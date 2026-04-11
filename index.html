@@ -8,7 +8,7 @@
     <meta content="Distributed Databases, NoSQL, Fault-Tolerance, Cybersecurity, Machine Learning" name="Keywords" />
     <meta content="Siamak Solat" name="Author" />
     <meta content="Personal page of Siamak Solat" name="Description" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="width=980, initial-scale=1.0" name="viewport" />
 
     <link rel="icon" type="image/jpeg" href="s-letter-1.jpg" />
 
@@ -23,7 +23,7 @@
         }
 
         .corps {
-            width: min(800px, 100%);
+            width: 800px;
             min-height: 550px;
             margin: 20px auto;
             padding: 15px 50px;
@@ -247,11 +247,10 @@
             font-size: var(--base-font-size);
             line-height: 1.48;
             font-style: italic;
-            -webkit-text-size-adjust: 100%;
         }
 
         .corps {
-            width: min(800px, 100%);
+            width: 800px;
             margin: 0 auto;
             padding: 22px 42px;
             border: 1px solid var(--card-border);
@@ -454,7 +453,6 @@
             background: #f7fbff;
             color: #1f5a87 !important;
             font-weight: 600;
-            white-space: nowrap;
             transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
         }
 
@@ -570,123 +568,6 @@
                 transform: translateY(0);
             }
         }
-
-        @media (max-width: 860px) {
-            body {
-                padding: 14px 8px 24px;
-            }
-
-            .corps {
-                width: 100%;
-                max-width: 100%;
-                padding: 16px 12px;
-                border-radius: 14px;
-            }
-
-            .top-controls {
-                display: grid;
-                grid-template-columns: auto 1fr auto;
-                align-items: start;
-                gap: 8px;
-                padding: 10px;
-            }
-
-            .zoom-controls {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-            }
-
-            .zoom-controls button {
-                width: 48px;
-                margin-right: 0;
-                padding: 4px 8px;
-            }
-
-            .logo:not(:first-of-type) {
-                margin-left: 8px;
-            }
-
-            .language-selector {
-                text-align: right;
-                line-height: 1.35;
-            }
-
-            .language-selector a {
-                margin-left: 0;
-            }
-
-            .header-container .lang-content h1 {
-                font-size: 1.95rem;
-            }
-
-            .header-info-row {
-                padding: 12px 10px;
-            }
-
-            .header-info-line {
-                align-items: flex-start;
-                gap: 8px;
-                margin-bottom: 6px;
-            }
-
-            .header-info-left {
-                min-width: 0;
-            }
-
-            .header-info-right {
-                flex: 0 0 120px;
-                width: 120px;
-                min-width: 120px;
-                text-align: right;
-            }
-
-            .header-info-row .header-info-left {
-                font-size: 1rem;
-                line-height: 1.35;
-            }
-
-            .header-info-row .profile-link {
-                font-size: 0.98rem;
-                padding: 4px 8px;
-            }
-
-            .tabs {
-                gap: 6px;
-            }
-
-            .tabs a {
-                padding: 7px 10px;
-                font-size: 0.98em;
-            }
-
-            .menu-content {
-                border-radius: 0 12px 12px 12px;
-                padding: 14px 12px;
-            }
-
-            .pied {
-                margin: 0 -12px;
-                padding: 12px;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .header-info-right {
-                flex: 0 0 108px;
-                width: 108px;
-                min-width: 108px;
-            }
-
-            .header-info-row .profile-link {
-                font-size: 0.9rem;
-            }
-
-            .profile-icon {
-                width: 14px;
-                height: 14px;
-            }
-        }
     </style>
 
     <script type="text/javascript">
@@ -740,10 +621,9 @@
             updateLanguageContent();
         }
 
-        const MOBILE_LAYOUT_QUERY = window.matchMedia('(max-width: 860px)');
-        const DEFAULT_FONT_SIZE = MOBILE_LAYOUT_QUERY.matches ? 16 : 13;
-        const MIN_FONT_SIZE = MOBILE_LAYOUT_QUERY.matches ? 14 : 12;
-        const MAX_FONT_SIZE = MOBILE_LAYOUT_QUERY.matches ? 19 : DEFAULT_FONT_SIZE + 1;
+        const DEFAULT_FONT_SIZE = 13;
+        const MIN_FONT_SIZE = 12;
+        const MAX_FONT_SIZE = DEFAULT_FONT_SIZE + 1;
 
         function applyFontSize(size) {
             document.documentElement.style.setProperty('--base-font-size', size + 'px');
