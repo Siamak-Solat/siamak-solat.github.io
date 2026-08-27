@@ -9,7 +9,7 @@
     <meta content="Siamak Solat" name="Author" />
     <meta content="Personal page of Siamak Solat" name="Description" />
 
-    <!-- <link rel="icon" type="image/jpeg" href="s-letter-1.jpg" /> --> 
+    <!-- <link rel="icon" type="image/jpeg" href="s-letter-1.jpg" /> -->
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <style media="screen" type="text/css">
@@ -208,6 +208,29 @@
 
         #menu5 .repo-sublist li {
             margin: 0.15em 0;
+        }
+
+        #menu6 .service-list {
+            list-style-type: none;
+            margin: 0;
+            padding-left: 0;
+        }
+
+        #menu6 .service-list>li {
+            margin-bottom: 1em;
+            padding-left: 0;
+        }
+
+        #menu6 .service-year {
+            display: inline-block;
+            min-width: 3.8em;
+            font-weight: 700;
+        }
+
+        #menu6 .service-detail {
+            display: block;
+            margin: 0.25em 0 0 3.8em;
+            color: #d7e7f4;
         }
 
         .zoom-controls {
@@ -820,6 +843,11 @@
                 <span class="lang-content lang-en">Repositories</span>
                 <span class="lang-content lang-fr">Dépôts</span>
             </a>
+
+            <a href="javascript:void(0);" onclick="showContent('menu6');" class="en-only-tab">
+                <span class="lang-content lang-en">Academic Service</span>
+                <span class="lang-content lang-fr">Service académique</span>
+            </a>
         </div>
 
         <!-- Content for Menu 1 -->
@@ -832,7 +860,8 @@
                 </p>
 
                 <p>
-                    My current research focuses on robust and dependable distributed training of large models in heterogeneous and volatile computing environments
+                    My current research focuses on robust and dependable distributed training of large models in
+                    heterogeneous and volatile computing environments
                     as part of the <a href="https://www.inria.fr/en/cupseli" target="_blank">Cupseli</a> project.
                     I develop training methods and runtime mechanisms that
                     account for differences in worker speed, memory, bandwidth, reliability, and availability. My goal
@@ -1233,6 +1262,35 @@
                     </li>
                 </ul>
             </div>
+            <div class="lang-content lang-fr">
+                <!-- French version -->
+            </div>
+        </div>
+
+        <!-- Content for Menu 6 -->
+        <div id="menu6" class="menu-content">
+            <div class="lang-content lang-en">
+                <h2>Academic Service</h2>
+                <ul class="service-list">
+                    <li>
+                        <span class="service-year">2026</span>
+                        <strong>Technical Program Committee Member</strong> — IEEE BCCA'26 conference
+                    </li>
+                    <li>
+                        <span class="service-year">2026</span>
+                        <strong>Reviewer</strong> — ACM SAC'26 conference
+                    </li>
+                    <li>
+                        <span class="service-year">2025</span>
+                        <strong>Technical Program Committee Member</strong> — IEEE BCCA'25 conference
+                    </li>
+                    <li>
+                        <span class="service-year">2018</span>
+                        <strong>Invited Reviewer</strong> — ACM Computing Surveys (CSUR)
+                    </li>
+                </ul>
+            </div>
+
             <div class="lang-content lang-fr">
                 <!-- French version -->
             </div>
